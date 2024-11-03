@@ -207,23 +207,21 @@
     </div>
   </div>
 
-  <script>
-    function calculateDaysSince(dateString) {
-      const startDate = new Date(dateString);
-      const currentDate = new Date();
-      const timeDifference = currentDate - startDate;
-      const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-      return days;
-    }
+<script>
+  function calculateDaysSince(dateString) {
+    const startDate = new Date(dateString);
+    const currentDate = new Date();
+    const timeDifference = currentDate - startDate;
+    const days = Math.round(timeDifference / (1000 * 60 * 60 * 24));
+    return days;
+  }
 
-    // Set initial date and display days count
-    const startDate = "2023-04-29";
-    document.getElementById("days-counter").textContent = calculateDaysSince(startDate);
+  const startDate = "2023-04-29";
+  document.getElementById("days-counter").textContent = calculateDaysSince(startDate);
 
-    // Close welcome modal after a few seconds
-    setTimeout(() => {
-      document.querySelector('.welcome-modal').style.display = 'none';
-    }, 3000);
-  </script>
+  setTimeout(() => {
+    document.querySelector('.welcome-modal').style.display = 'none';
+  }, 3000);
+</script>
 </body>
 </html>
